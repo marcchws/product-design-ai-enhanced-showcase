@@ -31,7 +31,7 @@ export const caseStudies: CaseStudy[] = [
     complexidade: 67,
     url: '/showcase/ecommerce-dashboard',
     tecnologias: ['React', 'TypeScript', 'Charts', 'Real-time'],
-    implementado: false,
+    implementado: true,
     preview: 'Dashboard responsivo com métricas e gestão completa de produtos.'
   },
   {
