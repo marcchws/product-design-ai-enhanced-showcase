@@ -367,13 +367,13 @@ export default function SobrePage() {
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center mb-12">
             <Button size="lg" variant="secondary" asChild>
-              <a href="mailto:marcos@exemplo.com">
+              <a href="mailto:marcos.bricches@gmail.com">
                 <LucideIcons.Mail className="mr-2 h-5 w-5" />
-                marcos@exemplo.com
+                marcos.bricches@gmail.com
               </a>
             </Button>
             
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600" asChild>
+            <Button size="lg" variant="outline" className="border-white text-blue-600 hover:bg-white hover:text-blue-600" asChild>
               <a href="https://linkedin.com/in/marcosbricches" target="_blank" rel="noopener noreferrer">
                 <LucideIcons.Linkedin className="mr-2 h-5 w-5" />
                 LinkedIn
@@ -437,8 +437,8 @@ export default function SobrePage() {
               <h3 className="font-semibold mb-4">Contato</h3>
               <ul className="space-y-2 text-gray-400">
                 <li>
-                  <a href="mailto:marcos@exemplo.com" className="hover:text-white transition-colors">
-                    marcos@exemplo.com
+                  <a href="mailto:marcos.bricches@gmail.com" className="hover:text-white transition-colors">
+                    marcos.bricches@gmail.com
                   </a>
                 </li>
                 <li>
@@ -462,7 +462,7 @@ export default function SobrePage() {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Marcos Bricches. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Marcos Bricches. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

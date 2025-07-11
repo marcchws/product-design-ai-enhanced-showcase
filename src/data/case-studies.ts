@@ -42,7 +42,7 @@ export const caseStudies: CaseStudy[] = [
     complexidade: 45,
     url: '/showcase/saas-onboarding',
     tecnologias: ['React', 'Multi-step Forms', 'Progress Tracking'],
-    implementado: false,
+    implementado: true,
     preview: 'Fluxo multi-etapas com validações e feedback em tempo real.'
   }
 ];
