@@ -55,7 +55,7 @@ export default function CRMSimplesPage() {
     empresa: '',
     cargo: '',
     observacoes: '',
-    status: 'potencial' as const
+    status: 'potencial' as Contato['status']
   });
   const [errosFormulario, setErrosFormulario] = useState<Record<string, string>>({});
   const [salvandoFormulario, setSalvandoFormulario] = useState(false);
@@ -933,7 +933,7 @@ export default function CRMSimplesPage() {
                   <div>
                     <strong>Sistema Modular (Gestão Usuários):</strong>
                     <ul className="mt-2 space-y-1">
-                      <li>• > 20 pontos de complexidade</li>
+                      <li>• {'>'} 20 pontos de complexidade</li>
                       <li>• Múltiplos módulos especializados</li>
                       <li>• Estados globais compartilhados</li>
                       <li>• Ideal para sistemas complexos</li>
