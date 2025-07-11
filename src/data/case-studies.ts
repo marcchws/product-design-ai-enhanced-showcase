@@ -13,6 +13,17 @@ export const caseStudies: CaseStudy[] = [
     preview: 'Sistema administrativo com 28 estados UI mapeados e implementados.'
   },
   {
+    id: 'crm-simples',
+    titulo: 'CRM Simplificado',
+    descricao: 'Sistema básico de gestão de contatos com funcionalidades essenciais de CRUD. Exemplo perfeito de componente único.',
+    categoria: 'simples',
+    complexidade: 18,
+    url: '/showcase/crm-simples',
+    tecnologias: ['React', 'TypeScript', 'Tailwind'],
+    implementado: true,
+    preview: 'Exemplo de componente único para funcionalidades simples com 6 estados UI.'
+  },
+  {
     id: 'ecommerce-dashboard',
     titulo: 'Dashboard E-commerce',
     descricao: 'Painel administrativo para e-commerce com gestão de produtos, pedidos e analytics em tempo real.',
@@ -20,19 +31,8 @@ export const caseStudies: CaseStudy[] = [
     complexidade: 67,
     url: '/showcase/ecommerce-dashboard',
     tecnologias: ['React', 'TypeScript', 'Charts', 'Real-time'],
-    implementado: true,
+    implementado: false,
     preview: 'Dashboard responsivo com métricas e gestão completa de produtos.'
-  },
-  {
-    id: 'crm-simples',
-    titulo: 'CRM Simplificado',
-    descricao: 'Sistema básico de gestão de contatos com funcionalidades essenciais de CRUD.',
-    categoria: 'simples',
-    complexidade: 18,
-    url: '/showcase/crm-simples',
-    tecnologias: ['React', 'TypeScript', 'Tailwind'],
-    implementado: true,
-    preview: 'Exemplo de componente único para funcionalidades simples.'
   },
   {
     id: 'saas-onboarding',
