@@ -55,5 +55,16 @@ export const caseStudies: CaseStudy[] = [
   tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
   implementado: true,
   preview: 'Dashboard colaborativo, kanban de tarefas, timeline de projetos e relatórios de produtividade.',
-  }
+  },
+  {
+  id: 'ecommerce-checkout',
+  titulo: 'E-commerce Checkout Otimizado', 
+  descricao: 'Sistema de finalização de compra com foco em conversão, incluindo validação de estoque em tempo real, cálculo automático de frete, múltiplos métodos de pagamento (cartão, PIX, boleto) e recuperação de carrinho abandonado.',
+  categoria: 'complexo',
+  complexidade: 89,
+  url: '/showcase/ecommerce-checkout',
+  tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
+  implementado: true,
+  preview: 'Checkout multi-etapas com validação progressiva, auto-complete de endereço por CEP, desconto PIX, frete grátis promocional e otimizações de conversão.'
+}
 ];
