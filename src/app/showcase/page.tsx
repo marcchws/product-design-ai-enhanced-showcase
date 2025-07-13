@@ -176,22 +176,7 @@ export default function ShowcasePage() {
                           {caseStudy.categoria}
                         </Badge>
                         
-                        <div className="flex items-center gap-2">
-                          <span className="text-sm text-gray-500">
-                            {caseStudy.complexidade} pts
-                          </span>
-                          {caseStudy.implementado ? (
-                            <Badge variant="default" className="bg-green-600">
-                              <LucideIcons.CheckCircle className="h-3 w-3 mr-1" />
-                              Funcionando
-                            </Badge>
-                          ) : (
-                            <Badge variant="secondary">
-                              <LucideIcons.Clock className="h-3 w-3 mr-1" />
-                              Em Dev
-                            </Badge>
-                          )}
-                        </div>
+
                       </div>
                       
                       <CardTitle className="group-hover:text-blue-600 transition-colors">
@@ -264,10 +249,6 @@ export default function ShowcasePage() {
                 <div className="p-8">
                   <div className="flex items-center gap-2 mb-4">
                     <Badge>Complexo</Badge>
-                    <Badge variant="default" className="bg-green-600">
-                      <LucideIcons.CheckCircle className="h-3 w-3 mr-1" />
-                      Funcionando
-                    </Badge>
                   </div>
                   
                   <h3 className="text-2xl font-bold mb-4">Sistema de Gestão de Usuários</h3>

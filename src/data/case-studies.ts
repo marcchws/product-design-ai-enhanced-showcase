@@ -128,7 +128,18 @@ export const caseStudies: CaseStudy[] = [
     tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI', 'Charts'],
     implementado: true,
     preview: 'Dashboard responsivo com métricas tempo real, gestão CRUD completa e relatórios automáticos.'
-  }
+  },
+  {
+  id: 'delivery-pwa-mobile',
+  titulo: 'App Mobile PWA - Delivery',
+  descricao: 'Progressive Web App mobile-first para delivery com geolocalização, tracking em tempo real, checkout multi-etapas e estados offline.',
+  categoria: 'complexo',
+  complexidade: 129,
+  url: '/showcase/delivery-pwa-mobile',
+  tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI', 'PWA', 'Geolocation', 'WebSocket'],
+  implementado: true,
+  preview: 'PWA responsivo com busca inteligente, customização de produtos, carrinho persistente e rastreamento tempo real.'
+}
 ];
 
 // Estatísticas dos showcases para o dashboard principal
