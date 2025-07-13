@@ -128,7 +128,11 @@ export default function GestaoProjetosShowcase() {
 
     // Marcar aba como carregada
     if (!abasCarregadas.has(novaAba)) {
-      setAbasCarregadas(prev => new Set([...prev, novaAba]))
+      setAbasCarregadas(prev => {
+        const newSet = new Set(prev);
+        newSet.add(novaAba);
+        return newSet;
+      })
     }
   }, [abaSelecionada, abasCarregadas])
 

@@ -315,7 +315,10 @@ export default function ProjetosTimeline({ dados, periodo: periodoInicial }: Pro
             <div className="flex items-center space-x-4">
               <div>
                 <label className="text-sm font-medium text-gray-700">Período</label>
-                <Select value={periodo} onValueChange={setPeriodo}>
+                <Select 
+                  value={periodo} 
+                  onValueChange={(value) => setPeriodo(value as "semana" | "mes" | "trimestre")}
+                >
                   <SelectTrigger className="w-32">
                     <SelectValue />
                   </SelectTrigger>

@@ -244,7 +244,7 @@ export default function ProjetosKanban({ dados, onAtualizarTarefa }: ProjetosKan
             
             <div className="flex flex-col items-end space-y-1 ml-2">
               <Badge 
-                variant={prioridadeInfo.badge} 
+                variant={prioridadeInfo.badge as "default" | "secondary" | "destructive" | "outline"} 
                 className="text-xs"
               >
                 {tarefa.prioridade}
@@ -592,14 +592,14 @@ export default function ProjetosKanban({ dados, onAtualizarTarefa }: ProjetosKan
                   <div className="grid grid-cols-2 gap-4">
                     <div>
                       <h4 className="font-medium mb-1">Status</h4>
-                      <Badge variant={formatarStatusVisual(modalTarefa.status).badge}>
+                      <Badge variant={formatarStatusVisual(modalTarefa.status).badge as "default" | "secondary" | "destructive" | "outline"}>
                         {formatarStatusVisual(modalTarefa.status).texto}
                       </Badge>
                     </div>
 
                     <div>
                       <h4 className="font-medium mb-1">Prioridade</h4>
-                      <Badge variant={formatarStatusVisual(modalTarefa.prioridade).badge}>
+                      <Badge variant={formatarStatusVisual(modalTarefa.prioridade).badge as "default" | "secondary" | "destructive" | "outline"}>
                         {modalTarefa.prioridade}
                       </Badge>
                     </div>

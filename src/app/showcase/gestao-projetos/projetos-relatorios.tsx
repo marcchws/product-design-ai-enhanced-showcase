@@ -425,11 +425,11 @@ export default function ProjetosRelatorios({ dados, periodo: periodoInicial }: P
         </CardHeader>
         <CardContent>
           <div className="flex items-center justify-between">
-            <div className="flex items-center space-x-4">
-              <div>
-                <label className="text-sm font-medium text-gray-700">Período</label>
-                <Select value={periodo} onValueChange={setPeriodo}>
-                  <SelectTrigger className="w-32">
+                <div className="flex items-center space-x-4">
+                  <div>
+                    <label className="text-sm font-medium text-gray-700">Período</label>
+                    <Select value={periodo} onValueChange={(value) => setPeriodo(value as "mes" | "trimestre" | "ano")}>
+                      <SelectTrigger className="w-32">
                     <SelectValue />
                   </SelectTrigger>
                   <SelectContent>
