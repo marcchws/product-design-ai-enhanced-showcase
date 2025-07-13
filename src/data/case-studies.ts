@@ -66,5 +66,38 @@ export const caseStudies: CaseStudy[] = [
   tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
   implementado: true,
   preview: 'Checkout multi-etapas com validação progressiva, auto-complete de endereço por CEP, desconto PIX, frete grátis promocional e otimizações de conversão.'
+},
+{
+  id: 'avaliacao-desempenho',
+  titulo: 'Sistema de Avaliação de Desempenho',
+  descricao: 'Plataforma RH/HRM para digitalização completa do processo de avaliação 360°, incluindo auto-avaliação progressiva, gestão de equipe, feedback estruturado e planos de desenvolvimento personalizados.',
+  categoria: 'complexo',
+  complexidade: 87,
+  url: '/showcase/avaliacao-desempenho',
+  tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
+  implementado: true,
+  preview: 'Auto-avaliação progressiva, avaliação 360°, dashboard de progresso, resultados analíticos e planos de desenvolvimento.'
+},
+{
+  id: 'agendamento-consultas',
+  titulo: 'Sistema de Agendamento de Consultas Médicas',
+  descricao: 'HealthTech B2C marketplace para agendamento simplificado de consultas médicas, incluindo busca avançada de especialistas, calendário interativo em tempo real, validação de convênios e fluxo otimizado para redução de no-shows.',
+  categoria: 'complexo',
+  complexidade: 92,
+  url: '/showcase/agendamento-consultas',
+  tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
+  implementado: true,
+  preview: 'Busca inteligente de médicos, calendário interativo, validação tempo real, fluxo multi-step otimizado e confirmação detalhada.'
+},
+{
+  id: 'dashboard-financeiro-empresarial',
+  titulo: 'Dashboard Financeiro Empresarial',
+  descricao: 'FinTech B2B Enterprise - SaaS de inteligência financeira com sistema modular complexo para análise multiusuário, incluindo gestão de receitas/despesas, projeções de fluxo de caixa por cenários, automação de relatórios e controle granular de permissões por perfil organizacional.',
+  categoria: 'complexo',
+  complexidade: 170,
+  url: '/showcase/dashboard-financeiro-empresarial',
+  tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
+  implementado: true,
+  preview: 'Sistema modular com 6 módulos especializados, dashboard personalizado por perfil, gestão completa CRUD, workflow de aprovação, projeções cenários, automação relatórios e controle permissões granular.'
 }
 ];
