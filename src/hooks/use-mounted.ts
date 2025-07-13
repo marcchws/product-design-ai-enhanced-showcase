@@ -1,14 +1,24 @@
-import { useRef, useEffect } from 'react';
+// src/hooks/use-mounted.ts
+'use client'
 
-export function useMounted() {
-  const montadoRef = useRef(true);
-  
+import { useRef, useEffect } from 'react'
+
+/**
+ * Hook para prevenção de memory leaks
+ * 
+ * OBRIGATÓRIO em todos os componentes que fazem operações assíncronas
+ * Garante que estado não seja atualizado em componentes desmontados
+ */
+export const useMounted = () => {
+  const montadoRef = useRef(true)
+
   useEffect(() => {
-    montadoRef.current = true;
+    montadoRef.current = true
+    
     return () => {
-      montadoRef.current = false;
-    };
-  }, []);
-  
-  return montadoRef;
+      montadoRef.current = false
+    }
+  }, [])
+
+  return montadoRef
 }

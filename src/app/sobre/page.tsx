@@ -55,10 +55,8 @@ export default function SobrePage() {
                 
                 <div className="flex flex-wrap gap-3 mb-8">
                   <Badge variant="default">Product Designer</Badge>
-                  <Badge variant="outline">AI Enthusiast</Badge>
-                  <Badge variant="outline">TypeScript</Badge>
-                  <Badge variant="outline">Figma</Badge>
-                  <Badge variant="outline">Methodology Creator</Badge>
+                  <Badge variant="outline">AI-enhanced</Badge>
+                  <Badge variant="outline">UX Designer</Badge>
                 </div>
                 
                 <div className="flex gap-4">
@@ -79,9 +77,13 @@ export default function SobrePage() {
               
               <div className="text-center">
                 <div className="relative">
-                  <div className="w-64 h-64 bg-gradient-to-br from-blue-600 to-purple-600 rounded-full mx-auto flex items-center justify-center">
-                    <span className="text-white text-6xl font-bold">MB</span>
-                  </div>
+                    <div className="w-64 h-64 relative mx-auto">
+                    <img 
+                      src="/profile-photo.png" 
+                      alt="Marcos Bricches"
+                      className="w-full h-full object-cover rounded-full border-4 border-white shadow-lg"
+                    />
+                    </div>
                   <div className="absolute -bottom-4 -right-4 bg-white rounded-full p-3 shadow-lg">
                     <LucideIcons.Sparkles className="h-8 w-8 text-yellow-500" />
                   </div>
@@ -322,7 +324,7 @@ export default function SobrePage() {
             <div className="grid md:grid-cols-2 gap-8">
               <Card>
                 <CardContent className="p-8">
-                  <h3 className="text-xl font-bold mb-4">Metodologia Proprietária</h3>
+                  <h3 className="text-xl font-bold mb-4">Metodologia Própria</h3>
                   <p className="text-gray-600 mb-4">
                     Desenvolvi um framework sistemático que combina análise inteligente de requisitos 
                     com implementação técnica robusta, eliminando o gap entre design e desenvolvimento.
@@ -340,7 +342,7 @@ export default function SobrePage() {
                 <CardContent className="p-8">
                   <h3 className="text-xl font-bold mb-4">Perfil Híbrido Único</h3>
                   <p className="text-gray-600 mb-4">
-                    Combinação rara de Product Designer + Desenvolvedor + Criador de Metodologias + 
+                    Product Designer + Front-end + Criador de Metodologias + 
                     Especialista em IA que resulta em soluções mais completas e implementáveis.
                   </p>
                   <ul className="text-sm text-gray-600 space-y-1">

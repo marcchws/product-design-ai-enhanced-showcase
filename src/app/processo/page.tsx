@@ -15,7 +15,7 @@ export default function ProcessoPage() {
       numero: 1,
       titulo: 'Análise Multicamada',
       descricao: 'Decomposição sistemática do requisito em 6 camadas',
-      tempo: '15-30 min',
+      tempo: '2 min',
       icone: 'Search',
       detalhes: [
         'Contexto de Produto: tipo, modelo negócio, usuários',
@@ -30,7 +30,7 @@ export default function ProcessoPage() {
       numero: 2,
       titulo: 'Decisão Arquitetural',
       descricao: 'Métricas objetivas determinam arquitetura ideal',
-      tempo: '5-10 min',
+      tempo: '1 min',
       icone: 'Building2',
       detalhes: [
         'Cálculo automático de complexidade',
@@ -45,7 +45,7 @@ export default function ProcessoPage() {
       numero: 3,
       titulo: 'Especificação Completa',
       descricao: 'Documentação técnica para implementação',
-      tempo: '10-15 min',
+      tempo: '1 min',
       icone: 'FileText',
       detalhes: [
         'Arquitetura de informação estruturada',
@@ -60,7 +60,7 @@ export default function ProcessoPage() {
       numero: 4,
       titulo: 'Implementação Técnica',
       descricao: 'Código React funcional com padrões defensivos',
-      tempo: '20-45 min',
+      tempo: '10 min',
       icone: 'Code',
       detalhes: [
         'Estrutura modular ou componente único',
@@ -75,7 +75,7 @@ export default function ProcessoPage() {
       numero: 5,
       titulo: 'Validação de Qualidade',
       descricao: 'Verificação automatizada de completude',
-      tempo: '5-10 min',
+      tempo: '1 min',
       icone: 'CheckCircle',
       detalhes: [
         'Checklist de 24 itens verificado',
@@ -144,7 +144,7 @@ export default function ProcessoPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-2xl mx-auto">
               <div className="text-center">
-                <div className="text-3xl font-bold text-blue-600">60-120</div>
+                <div className="text-3xl font-bold text-blue-600">10-15</div>
                 <div className="text-gray-600">minutos total</div>
               </div>
               <div className="text-center">
@@ -517,7 +517,7 @@ export default function ProcessoPage() {
               </Link>
             </Button>
             
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600" asChild>
+            <Button size="lg" variant="outline" className="border-white text-purple-600 hover:bg-white hover:text-purple-600" asChild>
               <Link href="/showcase">
                 <LucideIcons.Grid3X3 className="mr-2 h-5 w-5" />
                 Todos os Cases

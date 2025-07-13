@@ -238,12 +238,6 @@ export default function ShowcasePage() {
                           </Link>
                         </Button>
                         
-                        {caseStudy.implementado && (
-                          <Button variant="outline" size="sm" className="w-full">
-                            <LucideIcons.Code className="mr-2 h-4 w-4" />
-                            Ver Metodologia Aplicada
-                          </Button>
-                        )}
                       </div>
                     </CardContent>
                   </Card>
@@ -308,10 +302,6 @@ export default function ShowcasePage() {
                         Acessar Sistema Completo
                       </Link>
                     </Button>
-                    <Button variant="outline" size="sm" className="w-full">
-                      <LucideIcons.FileText className="mr-2 h-4 w-4" />
-                      Ver Análise Detalhada
-                    </Button>
                   </div>
                 </div>
                 
@@ -356,7 +346,7 @@ export default function ShowcasePage() {
               </Link>
             </Button>
             
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600" asChild>
+            <Button size="lg" variant="outline" className="border-white text-purple-600 hover:bg-white hover:text-purple-600" asChild>
               <Link href="/metodologia">
                 <LucideIcons.BookOpen className="mr-2 h-5 w-5" />
                 Entender Metodologia
@@ -407,7 +397,7 @@ export default function ShowcasePage() {
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Marcos Bricches. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Marcos Bricches. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

@@ -251,9 +251,6 @@ export default function MetodologiaPage() {
                         <div className={`w-16 h-16 bg-${pilar.cor}-100 rounded-full flex items-center justify-center mx-auto`}>
                           <IconeComponente className={`h-8 w-8 text-${pilar.cor}-600`} />
                         </div>
-                        <div className={`absolute -top-2 -right-2 w-8 h-8 bg-${pilar.cor}-600 text-white rounded-full flex items-center justify-center text-sm font-bold`}>
-                          {pilar.numero}
-                        </div>
                       </div>
                       <CardTitle className="text-lg group-hover:text-blue-600 transition-colors">
                         {pilar.titulo}
@@ -397,7 +394,7 @@ export default function MetodologiaPage() {
               <h3 className="font-semibold mb-4">Contato</h3>
               <p className="text-gray-400 mb-2">Marcos Bricches</p>
               <p className="text-gray-400 text-sm">
-                Product Designer especializado em metodologias AI-enhanced
+                Product Designer
               </p>
             </div>
           </div>

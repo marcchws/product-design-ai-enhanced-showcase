@@ -299,7 +299,7 @@ export default function HomePage() {
               </Link>
             </Button>
             
-            <Button size="lg" variant="outline" className="border-white text-white hover:bg-white hover:text-purple-600" asChild>
+            <Button size="lg" variant="outline" className="border-white text-purple-600 hover:bg-white hover:text-purple-600" asChild>
               <Link href="/sobre">
                 <LucideIcons.User className="mr-2 h-5 w-5" />
                 Sobre Marcos Bricches
@@ -339,13 +339,13 @@ export default function HomePage() {
               <h3 className="font-semibold mb-4">Desenvolvido por</h3>
               <p className="text-gray-400 mb-2">Marcos Bricches</p>
               <p className="text-gray-400 text-sm">
-                Product Designer especializado em metodologias AI-enhanced
+                Product Designer
               </p>
             </div>
           </div>
           
           <div className="border-t border-gray-800 mt-8 pt-8 text-center text-gray-400">
-            <p>&copy; 2024 Marcos Bricches. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Marcos Bricches. Todos os direitos reservados.</p>
           </div>
         </div>
       </footer>

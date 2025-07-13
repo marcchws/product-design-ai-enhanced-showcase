@@ -44,5 +44,16 @@ export const caseStudies: CaseStudy[] = [
     tecnologias: ['React', 'Multi-step Forms', 'Progress Tracking'],
     implementado: true,
     preview: 'Fluxo multi-etapas com validações e feedback em tempo real.'
+  },
+  {
+  id: 'gestao-projetos',
+  titulo: 'Sistema de Gestão de Projetos',
+  descricao: 'Plataforma colaborativa para gerenciar projetos, equipes e tarefas com permissões granulares e acompanhamento em tempo real.',
+  categoria: 'complexo',
+  complexidade: 124,
+  url: '/showcase/gestao-projetos', 
+  tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI'],
+  implementado: true,
+  preview: 'Dashboard colaborativo, kanban de tarefas, timeline de projetos e relatórios de produtividade.',
   }
 ];
