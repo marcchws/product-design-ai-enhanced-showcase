@@ -119,13 +119,8 @@ export default function ProjetosDashboard({ dados, onRecarregar }: ProjetosDashb
             
             <div className="flex flex-col items-end space-y-2">
               <Badge 
-                variant={
-                  statusInfo.badge === "success" || statusInfo.badge === "warning" 
-                  ? "default" 
-                  : (statusInfo.badge as "default" | "destructive" | "outline" | "secondary")
-                } 
-                className={`text-xs ${statusInfo.badge === "success" ? "bg-green-100 text-green-800" : 
-                  statusInfo.badge === "warning" ? "bg-yellow-100 text-yellow-800" : ""}`}
+                variant={statusInfo.badge}
+                className={`text-xs ${statusInfo.cor}`}
               >
                 {statusInfo.texto}
               </Badge>

@@ -307,11 +307,7 @@ export default function ProjetosRelatorios({ dados, periodo: periodoInicial }: P
                   </td>
                   <td className="py-3">
                     {/* Map unsupported variants to supported ones */}
-                    <Badge variant={
-                      formatarStatusVisual(metrica.projeto.status).badge === 'success' ? 'default' : 
-                      formatarStatusVisual(metrica.projeto.status).badge === 'warning' ? 'secondary' :
-                      formatarStatusVisual(metrica.projeto.status).badge as "default" | "secondary" | "destructive" | "outline"
-                    }>
+                    <Badge variant={formatarStatusVisual(metrica.projeto.status).badge}>
                       {formatarStatusVisual(metrica.projeto.status).texto}
                     </Badge>
                   </td>

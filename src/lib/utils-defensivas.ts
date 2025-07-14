@@ -124,7 +124,7 @@ export const formatarStatusVisual = (
   texto: string; 
   cor: string; 
   icone: string; 
-  badge: 'default' | 'secondary' | 'destructive' | 'outline' | 'success' | 'warning'
+  badge: 'default' | 'secondary' | 'destructive' | 'outline'
 } => {
   if (!status || typeof status !== 'string') {
     return { 
@@ -180,7 +180,7 @@ export const formatarStatusVisual = (
         texto: 'Pendente', 
         cor: 'text-yellow-600', 
         icone: 'Clock', 
-        badge: 'warning' 
+        badge: 'secondary' 
       };
     
     // Status de progresso
@@ -238,7 +238,7 @@ export const formatarStatusVisual = (
         texto: 'Média', 
         cor: 'text-yellow-600', 
         icone: 'Minus', 
-        badge: 'warning' 
+        badge: 'secondary' 
       };
     
     case 'alta':

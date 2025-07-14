@@ -139,7 +139,82 @@ export const caseStudies: CaseStudy[] = [
   tecnologias: ['React', 'TypeScript', 'Tailwind', 'Shadcn/UI', 'PWA', 'Geolocation', 'WebSocket'],
   implementado: true,
   preview: 'PWA responsivo com busca inteligente, customização de produtos, carrinho persistente e rastreamento tempo real.'
-}
+},
+{
+  id: 'sistema-iot-industrial',
+  titulo: 'Sistema IoT Industrial',
+  descricao: 'Monitoramento em tempo real e manutenção preditiva para ambientes industriais',
+  categoria: 'complexo',
+  complexidade: 178,
+  url: '/showcase/sistema-iot-industrial',
+  tecnologias: ['React', 'TypeScript', 'IoT', 'WebSocket', 'IA Preditiva'],
+  implementado: true,
+  preview: 'Dashboard completo com monitoramento 24/7, alertas críticos, manutenção preditiva e relatórios analytics para chão de fábrica.'
+},
+  {
+    id: 'portal-governo-digital',
+    titulo: 'Portal de Governo Digital',
+    descricao: 'Portal público com máxima acessibilidade (WCAG AAA) e suporte para múltipla literacia digital',
+    categoria: 'avancado',
+    complexidade: 172,
+    url: '/showcase/portal-governo-digital',
+    tecnologias: ['React', 'TypeScript', 'Tailwind CSS', 'Shadcn/UI', 'Acessibilidade WCAG AAA'],
+    implementado: true,
+    preview: 'Demonstra design inclusivo extremo com controles de acessibilidade, autenticação Gov.br simulada e transparência pública',
+  },
+  {
+  id: 'sistema-bancario',
+  titulo: 'Sistema Bancário de Internet Banking',
+  descricao: 'Sistema bancário completo com PIX, TED, pagamentos, investimentos e cartões. Demonstra segurança crítica (2FA, biometria), compliance PCI-DSS, workflows múltiplos e responsividade mobile-first. Exemplo de alta complexidade transformada em UX simples.',
+  categoria: 'avancado',
+  complexidade: 221,
+  url: '/showcase/sistema-bancario',
+  tecnologias: ['React', 'TypeScript', 'Next.js', 'Tailwind CSS', 'Shadcn/UI', 'Sonner'],
+  implementado: true,
+  preview: 'Sistema bancário com 6 módulos integrados: Dashboard financeiro, Transferências (PIX/TED), Pagamentos, Investimentos, Cartões e Configurações. Implementa autenticação 2FA, biometria, segurança bancária e compliance PCI-DSS.',
+  },
+  {
+  id: 'plataforma-telemedicina',
+  titulo: 'Plataforma de Telemedicina',
+  descricao: 'Sistema completo para consultas médicas remotas com múltiplos perfis de usuário, agendamento inteligente, teleconsultas via WebRTC, prontuário eletrônico integrado e gestão de pagamentos por convênio.',
+  categoria: 'avancado',
+  complexidade: 78,
+  url: '/showcase/plataforma-telemedicina',
+  tecnologias: [
+    'React',
+    'TypeScript', 
+    'Sistema Modular',
+    'WebRTC',
+    'Multi-perfil',
+    'Compliance LGPD',
+    'Responsividade',
+    'Estados UI Completos'
+  ],
+  implementado: true,
+  preview: 'Demonstra workflows multi-stakeholder complexos (paciente, médico, clínica, convênio), teleconsultas em tempo real, prontuário eletrônico com histórico completo e sistema de pagamentos integrado com convênios.',
+},
+  {
+    id: 'sistema-hrm',
+    titulo: 'Sistema de Gestão de Recursos Humanos (HRM)',
+    descricao: 'Sistema completo de gestão de pessoas com múltiplos módulos integrados: dashboard executivo, gestão de colaboradores, recrutamento e seleção, benefícios e folha, treinamento e desenvolvimento, relatórios analíticos e configurações avançadas. Demonstra integração de workflows complexos, múltiplos perfis de usuário e regras de negócio sofisticadas.',
+    categoria: 'avancado',
+    complexidade: 195,
+    url: '/showcase/sistema-hrm',
+    tecnologias: [
+      'React',
+      'TypeScript',
+      'Next.js',
+      'Tailwind CSS',
+      'Shadcn/UI',
+      'Sistema Modular',
+      'Multi-perfil',
+      'Workflows Complexos',
+      'Estados UI Completos',
+      'Padrões Defensivos'
+    ],
+    implementado: true,
+    preview: 'Sistema HRM com 7 módulos especializados: Dashboard com métricas em tempo real, Gestão de Colaboradores com CRUD completo, Recrutamento com workflow de candidatos, Benefícios e Folha integrados, Treinamento com progresso, Relatórios analíticos e Configurações avançadas. Implementa 35+ estados UI, 4 perfis de usuário e integração completa de dados.',
+  }
 ];
 
 // Estatísticas dos showcases para o dashboard principal
