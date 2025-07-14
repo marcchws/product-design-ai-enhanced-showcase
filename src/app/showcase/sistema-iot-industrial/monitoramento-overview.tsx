@@ -14,7 +14,7 @@ interface Props {
 
 // Função utilitária para status visual de sensor
 const formatarStatusSensor = (status: string) => {
-  const configs = {
+  const configs: Record<string, { cor: string; bg: string; icone: string; texto: string }> = {
     'normal': { 
       cor: 'text-green-400', 
       bg: 'bg-green-500/20 border-green-500/50', 
@@ -46,7 +46,7 @@ const formatarStatusSensor = (status: string) => {
 
 // Função utilitária para ícone de sensor por tipo
 const obterIconeSensor = (tipo: string) => {
-  const icones = {
+  const icones: Record<string, string> = {
     'temperatura': 'Thermometer',
     'pressao': 'Gauge',
     'vibração': 'Activity',
@@ -62,12 +62,12 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
   
   // Análise de dados em tempo real
   const analiseTempoReal = useMemo(() => {
-    const sensoresPorStatus = dados.sensores.reduce((acc, sensor) => {
+    const sensoresPorStatus = dados.sensores.reduce((acc: Record<string, number>, sensor: any) => {
       acc[sensor.status] = (acc[sensor.status] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
     
-    const maquinasPorLinha = dados.maquinas.reduce((acc, maquina) => {
+    const maquinasPorLinha = dados.maquinas.reduce((acc: Record<string, any>, maquina: any) => {
       if (!acc[maquina.linha_producao]) {
         acc[maquina.linha_producao] = {
           total: 0,
@@ -94,7 +94,7 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
     return {
       sensoresPorStatus,
       maquinasPorLinha,
-      alertasCriticos: dados.alertas.filter(a => a.tipo === 'critico' && a.status === 'ativo'),
+      alertasCriticos: dados.alertas.filter((a: any) => a.tipo === 'critico' && a.status === 'ativo'),
       tendenciaEficiencia: Math.random() > 0.5 ? 'subindo' : 'estavel' // Simulado
     };
   }, [dados]);
@@ -102,7 +102,7 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
   const linhasProducao = Object.keys(analiseTempoReal.maquinasPorLinha);
   const maquinasFiltradas = linhaFiltro === 'todas' 
     ? dados.maquinas 
-    : dados.maquinas.filter(m => m.linha_producao === linhaFiltro);
+    : dados.maquinas.filter((m: any) => m.linha_producao === linhaFiltro);
   
   return (
     <div className="space-y-6">
@@ -187,7 +187,7 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
           </CardHeader>
           <CardContent>
             <div className="space-y-3">
-              {analiseTempoReal.alertasCriticos.slice(0, 3).map(alerta => (
+              {analiseTempoReal.alertasCriticos.slice(0, 3).map((alerta: any) => (
                 <div key={alerta.id} className="flex items-center justify-between p-3 bg-red-900/30 rounded-lg border border-red-800/50">
                   <div className="flex items-center space-x-3">
                     <LucideIcons.AlertCircle className="h-5 w-5 text-red-400" />
@@ -227,8 +227,8 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
         </CardHeader>
         <CardContent>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4">
-            {maquinasFiltradas.map(maquina => {
-              const statusConfig = {
+            {maquinasFiltradas.map((maquina: any) => {
+              const statusConfig: Record<string, { cor: string; badge: string; texto: string }> = {
                 'operando': { cor: 'border-green-500 bg-green-500/10', badge: 'default', texto: 'Operando' },
                 'manutencao': { cor: 'border-yellow-500 bg-yellow-500/10', badge: 'secondary', texto: 'Manutenção' },
                 'parada': { cor: 'border-orange-500 bg-orange-500/10', badge: 'secondary', texto: 'Parada' },
@@ -260,7 +260,7 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
                       <div>
                         <p className="text-sm text-gray-400 mb-2">Sensores:</p>
                         <div className="grid grid-cols-2 gap-2">
-                          {maquina.sensores.slice(0, 4).map(sensor => {
+                          {maquina.sensores.slice(0, 4).map((sensor: any) => {
                             const statusSensor = formatarStatusSensor(sensor.status);
                             const IconeSensor = LucideIcons[obterIconeSensor(sensor.tipo) as keyof typeof LucideIcons] as any;
                             
@@ -312,7 +312,7 @@ export default function MonitoramentoOverview({ dados, websocketConectado, perfi
                 <div key={status} className={`p-4 rounded-lg border ${statusConfig.bg}`}>
                   <div className="flex items-center justify-between">
                     <div>
-                      <p className={`text-lg font-bold ${statusConfig.cor}`}>{quantidade}</p>
+                      <p className={`text-lg font-bold ${statusConfig.cor}`}>{quantidade as number}</p>
                       <p className="text-sm text-gray-400">{statusConfig.texto}</p>
                     </div>
                     <IconeStatus className={`h-6 w-6 ${statusConfig.cor}`} />
