@@ -89,3 +89,28 @@ export const formatarDataContextual = (
     return 'Erro de formato';
   }
 };
+
+export const formatarMoeda = (
+  valor: number | string | undefined, 
+  moeda: 'BRL' | 'USD' | 'EUR' = 'BRL'
+): string => {
+  if (valor === undefined || valor === null || valor === '') return 'R$ 0,00';
+  
+  try {
+    const numero = typeof valor === 'string' ? parseFloat(valor) : valor;
+    
+    if (isNaN(numero)) return 'Valor inválido';
+    
+    const formatter = new Intl.NumberFormat('pt-BR', {
+      style: 'currency',
+      currency: moeda,
+      minimumFractionDigits: 2,
+      maximumFractionDigits: 2
+    });
+    
+    return formatter.format(numero);
+  } catch (error) {
+    console.error('Erro ao formatar moeda:', error);
+    return 'Erro de formato';
+  }
+};
