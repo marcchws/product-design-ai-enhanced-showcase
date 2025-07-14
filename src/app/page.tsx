@@ -183,7 +183,7 @@ export default function HomePage() {
                 descricao: 'Score ≥90 obrigatório antes do handoff'
               }
             ].map((pilar, index) => {
-              const IconeComponente = LucideIcons[pilar.icone as keyof typeof LucideIcons] as any;
+              const IconeComponente = LucideIcons[pilar.icone as keyof typeof LucideIcons] as React.ComponentType<{ className?: string }>;
               
               return (
                 <Card key={index} className="h-full hover:shadow-lg transition-shadow">

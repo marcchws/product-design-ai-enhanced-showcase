@@ -4,7 +4,7 @@ import React, { useState, useCallback, useMemo } from 'react'
 import { toast } from 'sonner'
 import * as LucideIcons from 'lucide-react'
 import { Button } from "@/components/ui/button"
-import { Badge } from "@/components/ui/badge"
+
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Dialog, DialogContent, DialogDescription, DialogFooter, DialogHeader, DialogTitle } from "@/components/ui/dialog"
 
@@ -94,7 +94,7 @@ export default function CarrinhoPedido({
 
 const renderizarCustomizacoes = useCallback((item: ItemPedido) => {
     const customizacoes = Object.entries(item.customizacoes_selecionadas)
-      .filter(([_, opcoes]) => opcoes.length > 0)
+      .filter(([, opcoes]) => opcoes.length > 0)
       .map(([nome, opcoes]) => `${nome}: ${opcoes.join(', ')}`)
       .join(' • ');
 

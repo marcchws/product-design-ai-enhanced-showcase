@@ -260,7 +260,7 @@ export default function ShowcasePage() {
                   <div className="space-y-4 mb-6">
                     <div className="flex items-center gap-3">
                       <LucideIcons.Target className="h-5 w-5 text-blue-600" />
-                      <span>Input: "Admins devem gerenciar usuários com CRUD básico"</span>
+                      <span>Input: &quot;Admins devem gerenciar usuários com CRUD básico&quot;</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <LucideIcons.BarChart3 className="h-5 w-5 text-purple-600" />

@@ -5,11 +5,9 @@ import { toast, Toaster } from 'sonner'
 import * as LucideIcons from 'lucide-react'
 
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select"
 
 // Módulos especializados
 import DashboardOverview from './dashboard-overview'
@@ -53,6 +51,45 @@ interface EmpresaConfig {
   plano_contas: string[]
   periodo_fiscal: string
 }
+
+// Types for tab data
+interface DadosAbaOverview {
+  kpis: any[]
+  graficos: any[]
+  alertas: any[]
+}
+
+interface DadosAbaReceitas {
+  transacoes: any[]
+  categorias: any[]
+  trends: any[]
+}
+
+interface DadosAbaDespesas {
+  lancamentos: any[]
+  orcamentos: any[]
+  analises: any[]
+}
+
+interface DadosAbaFluxoCaixa {
+  projecoes: any[]
+  cenarios: any[]
+  historico: any[]
+}
+
+interface DadosAbaRelatorios {
+  templates: any[]
+  agendados: any[]
+  historico: any[]
+}
+
+interface DadosAbaConfiguracoes {
+  contas: any[]
+  usuarios: any[]
+  intergracoes: any[]
+}
+
+type DadosAba = DadosAbaOverview | DadosAbaReceitas | DadosAbaDespesas | DadosAbaFluxoCaixa | DadosAbaRelatorios | DadosAbaConfiguracoes
 
 // Função utilitária defensiva para formatação monetária
 const formatarMoeda = (valor: number | undefined, moeda: string = 'BRL'): string => {
@@ -130,7 +167,7 @@ export default function DashboardFinanceiroEmpresarial() {
   const [erroGlobal, setErroGlobal] = useState<string | null>(null)
   
   // Estados por aba para lazy loading
-  const [dadosPorAba, setDadosPorAba] = useState<Record<string, any>>({})
+  const [dadosPorAba, setDadosPorAba] = useState<Record<string, DadosAba>>({})
   const [carregandoPorAba, setCarregandoPorAba] = useState<Record<string, boolean>>({})
   const [erroPorAba, setErroPorAba] = useState<Record<string, string | null>>({})
   const [abasCarregadas, setAbasCarregadas] = useState<Set<string>>(new Set(['overview']))
@@ -262,9 +299,6 @@ export default function DashboardFinanceiroEmpresarial() {
         setEmpresa(empresaMock)
         setMetricas(metricasMock)
         
-        // Carregar dados da primeira aba
-        carregarDadosAba('overview')
-        
         toast.success('Dashboard carregado com sucesso')
       }
     } catch (error) {
@@ -312,7 +346,7 @@ export default function DashboardFinanceiroEmpresarial() {
       
       if (montadoRef.current) {
         // Dados mockados específicos por aba
-        const dadosAba: Record<TabId, any> = {
+        const dadosAba: Record<TabId, DadosAba> = {
           overview: { kpis: [], graficos: [], alertas: [] },
           receitas: { transacoes: [], categorias: [], trends: [] },
           despesas: { lancamentos: [], orcamentos: [], analises: [] },
@@ -363,12 +397,16 @@ export default function DashboardFinanceiroEmpresarial() {
   
   // Inicialização
   useEffect(() => {
-    carregarDadosGlobais()
-  }, [carregarDadosGlobais])
+    const init = async () => {
+      await carregarDadosGlobais()
+      await carregarDadosAba('overview')
+    }
+    init()
+  }, [carregarDadosGlobais, carregarDadosAba])
   
   // Renderização das abas com badges dinâmicas
   const renderizarAba = useCallback((aba: typeof configuracaoAbas[0]) => {
-    const IconeComponente = LucideIcons[aba.icone as keyof typeof LucideIcons] as any
+    const IconeComponente = LucideIcons[aba.icone as keyof typeof LucideIcons] as React.ComponentType<{ className?: string }>
     const isCarregando = carregandoPorAba[aba.id]
     
     return (
