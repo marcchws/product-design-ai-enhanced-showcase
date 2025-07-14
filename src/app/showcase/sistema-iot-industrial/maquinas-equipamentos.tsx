@@ -103,7 +103,8 @@ export default function MaquinasEquipamentos({ maquinas, sensores, perfilUsuario
   
   // Obter linhas de produção únicas
   const linhasProducao = useMemo(() => {
-    return [...new Set(maquinas.map(m => m.linha_producao))];
+    const linhas = maquinas.map(m => m.linha_producao);
+    return Array.from(new Set(linhas));
   }, [maquinas]);
   
   // Handler para alterar filtros
@@ -361,12 +362,13 @@ export default function MaquinasEquipamentos({ maquinas, sensores, perfilUsuario
                       <div className="grid grid-cols-2 gap-2">
                         {maquina.sensores.slice(0, 4).map((sensor: any) => {
                           const IconeSensor = LucideIcons[obterIconeSensor(sensor.tipo) as keyof typeof LucideIcons] as any;
-                          const corStatus = {
+                          const corStatusMap: Record<string, string> = {
                             'normal': 'text-green-400',
                             'atencao': 'text-yellow-400', 
                             'critico': 'text-red-400',
                             'offline': 'text-gray-400'
-                          }[sensor.status as keyof typeof corStatus];
+                          };
+                          const corStatus = corStatusMap[sensor.status] || 'text-gray-400';
                           
                           return (
                             <div key={sensor.id} className="flex items-center space-x-2 text-xs">
@@ -476,12 +478,13 @@ export default function MaquinasEquipamentos({ maquinas, sensores, perfilUsuario
                                   const count = maquina.sensores.filter((s: any) => s.status === status).length;
                                   if (count === 0) return null;
                                   
-                                  const cor = {
+                                  const corMap: Record<string, string> = {
                                     'normal': 'bg-green-500',
                                     'atencao': 'bg-yellow-500',
                                     'critico': 'bg-red-500', 
                                     'offline': 'bg-gray-500'
-                                  }[status as keyof typeof cor];
+                                  };
+                                  const cor = corMap[status] || 'bg-gray-500';
                                   
                                   return (
                                     <Badge key={status} className={`${cor} text-white text-xs px-1`}>
@@ -584,12 +587,13 @@ export default function MaquinasEquipamentos({ maquinas, sensores, perfilUsuario
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                   {maquinaSelecionada.sensores.map((sensor: any) => {
                     const IconeSensor = LucideIcons[obterIconeSensor(sensor.tipo) as keyof typeof LucideIcons] as any;
-                    const statusConfig = {
+                    const statusConfigMap: Record<string, { cor: string; bg: string }> = {
                       'normal': { cor: 'text-green-400', bg: 'bg-green-500/20' },
                       'atencao': { cor: 'text-yellow-400', bg: 'bg-yellow-500/20' },
                       'critico': { cor: 'text-red-400', bg: 'bg-red-500/20' },
                       'offline': { cor: 'text-gray-400', bg: 'bg-gray-500/20' }
-                    }[sensor.status as keyof typeof statusConfig];
+                    };
+                    const statusConfig = statusConfigMap[sensor.status] || statusConfigMap['offline'];
                     
                     return (
                       <Card key={sensor.id} className={`bg-slate-700 border-slate-600 ${statusConfig.bg}`}>

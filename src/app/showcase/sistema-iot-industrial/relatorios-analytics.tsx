@@ -107,17 +107,17 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
   // Analytics em tempo real
   const analytics = useMemo(() => {
     const totalMaquinas = dados.maquinas.length;
-    const maquinasOperando = dados.maquinas.filter(m => m.status === 'operando').length;
+    const maquinasOperando = dados.maquinas.filter((m: any) => m.status === 'operando').length;
     const eficienciaMedia = Math.round(
-      dados.maquinas.reduce((acc, m) => acc + m.eficiencia, 0) / totalMaquinas
+      dados.maquinas.reduce((acc: number, m: any) => acc + m.eficiencia, 0) / totalMaquinas
     );
     
-    const alertasPorTipo = dados.alertas.reduce((acc, alerta) => {
+    const alertasPorTipo = dados.alertas.reduce((acc: Record<string, number>, alerta: any) => {
       acc[alerta.tipo] = (acc[alerta.tipo] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
     
-    const sensoresPorStatus = dados.sensores.reduce((acc, sensor) => {
+    const sensoresPorStatus = dados.sensores.reduce((acc: Record<string, number>, sensor: any) => {
       acc[sensor.status] = (acc[sensor.status] || 0) + 1;
       return acc;
     }, {} as Record<string, number>);
@@ -142,14 +142,14 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
   
   // Filtrar relatórios por categoria baseado no perfil
   const relatoriosDisponiveis = useMemo(() => {
-    const permissoesPorPerfil = {
+    const permissoesPorPerfil: Record<string, string[]> = {
       'operador': ['operacional'],
       'supervisor': ['operacional', 'manutencao'],
       'manutencao': ['manutencao', 'tecnico'],
       'gerente': ['operacional', 'manutencao', 'tecnico', 'sustentabilidade']
     };
     
-    const categoriasPermitidas = permissoesPorPerfil[perfilUsuario] || ['operacional'];
+    const categoriasPermitidas = permissoesPorPerfil[perfilUsuario as keyof typeof permissoesPorPerfil] || ['operacional'];
     
     return tiposRelatorio.filter(rel => 
       categoriasPermitidas.includes(rel.categoria)
@@ -307,7 +307,7 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
                 <p className="text-sm text-gray-400">Alertas Ativos</p>
                 <div className="flex items-center space-x-2">
                   <p className="text-2xl font-bold text-orange-400">
-                    {Object.values(analytics.alertasPorTipo).reduce((a, b) => a + b, 0)}
+                    {(Object.values(analytics.alertasPorTipo) as number[]).reduce((a: number, b: number) => a + b, 0)}
                   </p>
                   {(() => {
                     const { icone, cor } = obterIconeTendencia(analytics.tendencias.alertas);
@@ -510,7 +510,7 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
                   Máquinas (deixe vazio para incluir todas)
                 </label>
                 <div className="grid grid-cols-2 gap-2 max-h-32 overflow-y-auto">
-                  {dados.maquinas.slice(0, 8).map(maquina => (
+                  {dados.maquinas.slice(0, 8).map((maquina: any) => (
                     <div key={maquina.id} className="flex items-center space-x-2">
                       <Checkbox
                         id={maquina.id}
@@ -545,7 +545,7 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
                   <Checkbox
                     id="incluir-graficos"
                     checked={parametrosRelatorio.incluirGraficos}
-                    onCheckedChange={(checked) => setParametrosRelatorio(prev => ({ ...prev, incluirGraficos: checked }))}
+                    onCheckedChange={(checked) => setParametrosRelatorio(prev => ({ ...prev, incluirGraficos: checked === true }))}
                   />
                   <label htmlFor="incluir-graficos" className="text-sm text-gray-300 cursor-pointer">
                     Incluir gráficos e visualizações
@@ -556,7 +556,7 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
                   <Checkbox
                     id="incluir-detalhes"
                     checked={parametrosRelatorio.incluirDetalhes}
-                    onCheckedChange={(checked) => setParametrosRelatorio(prev => ({ ...prev, incluirDetalhes: checked }))}
+                    onCheckedChange={(checked) => setParametrosRelatorio(prev => ({ ...prev, incluirDetalhes: checked === true }))}
                   />
                   <label htmlFor="incluir-detalhes" className="text-sm text-gray-300 cursor-pointer">
                     Incluir dados detalhados
@@ -567,7 +567,7 @@ export default function RelatoriosAnalytics({ dados, perfilUsuario }: Props) {
                   <Checkbox
                     id="enviar-email"
                     checked={parametrosRelatorio.enviarEmail}
-                    onCheckedChange={(checked) => setParametrosRelatorio(prev => ({ ...prev, enviarEmail: checked }))}
+                    onCheckedChange={(checked) => setParametrosRelatorio(prev => ({ ...prev, enviarEmail: checked === true }))}
                   />
                   <label htmlFor="enviar-email" className="text-sm text-gray-300 cursor-pointer">
                     Enviar por email
